@@ -15,12 +15,12 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 60px;
+    padding: 22px 60px;
 }
 
 nav{
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 nav a{
@@ -34,34 +34,35 @@ nav a{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 80px 80px;
-    min-height: 75vh;
-}
+    padding: 20px 80px 40px;
+    min-height: auto;
+    gap: 80px;
+}   
 
 .hero-text{
-    max-width: 600px;
+    max-width: 750px;
 }
 
 .hero-image img{
-    width: 990px;
-    height: 550px;
-    object-fit: cover;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
     border-radius: 8px;
 }
 
 .hero h2{
-    font-size: 58px;
+    font-size: 32.5px;
     font-weight: 300;
     line-height: 1.1;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .hero p{
     max-width: 500px;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.8;
     color: #6B6B6B;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .hero-tag{
@@ -372,13 +373,16 @@ h1, h2, h3{
 
 .login input[type="text"],
 .login input[type="email"],
-.login input[type="password"]{
+.login input[type="password"],
+.login input[type="number"]{
     padding: 14px;
     margin-bottom: 20px;
     font-size: 16px;
     border: 1px solid #D8D8D8;
     border-radius: 4px;
     font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .login-options{
@@ -401,6 +405,7 @@ h1, h2, h3{
 .login button{
     width: 100%;
     margin-bottom: 25px;
+    margin-top: 10px;
 }
 
 .login p{
@@ -412,6 +417,29 @@ h1, h2, h3{
     color: #B5966B;
     text-decoration: none;
     font-weight: 500;
+}
+
+.login textarea{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #D8D8D8;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    resize: vertical;
+}
+
+.login select{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #D8D8D8;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* PRODUCT DETAIL */

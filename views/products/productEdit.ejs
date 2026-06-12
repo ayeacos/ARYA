@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head') %>
+</head>
+
+<body>
+
+    <%- include('../partials/header') %>
+
+        <main>
+
+            <section class="login">
+
+                <h2>Editar Producto</h2>
+
+                <form>
+
+                    <label for="name">Nombre del producto</label>
+                    <input type="text" id="name" value="Vainilla">
+
+                    <label for="description">Descripción</label>
+                    <textarea id="description" rows="4"></textarea>
+
+                    <label for="image">Imagen</label>
+                    <input type="file" id="image">
+
+                    <label for="category">Categoría</label>
+                    <input type="text" id="category" value="Velas Aromáticas">
+
+                    <label for="aroma">Aroma</label>
+                    <input type="text" id="aroma" value="Vainilla">
+
+                    <label for="price">Precio</label>
+                    <input type="text" id="price" placeholder="$0">
+
+                    <button type="submit">Guardar cambios</button>
+
+                </form>
+            </section>
+        </main>
+
+        <%- include('../partials/footer') %>
+
+</body>
+</html>

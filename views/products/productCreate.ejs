@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head') %>
+</head>
+
+<body>
+
+    <%- include('../partials/header') %>
+
+        <main>
+            <section class="login">
+                <h2>Crear Producto</h2>
+
+                <form>
+
+                    <label for="name">Nombre del producto</label>
+                    <input type="text" id="name" placeholder="Nombre del producto">
+
+                    <label for="description">Descripción</label>
+                    <textarea id="description" rows="4"></textarea>
+
+                    <label for="image">Imagen</label>
+                    <input type="file" id="image">
+
+                    <label for="category">Categoría</label>
+                    <select id="category">
+                        <option>Aromáticas</option>
+                        <option>Escultóricas</option>
+                        <option>Gift Box</option>
+                        <option>Edición Limitada</option>
+                    </select>
+
+                    <label for="aroma">Aroma</label>
+                    <input type="text" id="aroma" placeholder="Vainilla, Lavanda, Coco Lima...">
+
+                    <label for="stock">Stock</label>
+                    <input type="text" id="stock" placeholder="Cantidad disponible">
+
+                    <label for="price">Precio</label>
+                    <input type="text" id="price" placeholder="$0">
+
+                    <button type="submit">Guardar producto</button>
+
+                </form>
+            </section>
+        </main>
+
+        <%- include('../partials/footer') %>
+
+</body>
+</html>
