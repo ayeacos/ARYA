@@ -31,21 +31,19 @@
         <section class="product-detail">
 
             <div class="product-image">
-                <img src="../public/img/vela-vainilla.png" alt="Vela Vainilla">
+                <img src="/img/<%= product.image %>" alt="<%= product.name %>">
             </div>
 
             <div class="product-info">
 
-                <p class="product-category">VELA AROMÁTICA</p>
+                <p class="product-category"><%= product.category %></p>
 
-                <h2>Vainilla</h2>
+                <h2><%= product.name %></h2>
 
-                <p class="product-price">$18.500</p>
+                <p class="product-price">$<%= product.price %></p>
 
                 <p class="product-description">
-                    Nuestra vela de vainilla combina suavidad, calidez y elegancia en una fragancia
-                    delicada que transforma cualquier espacio en un refugio de tranquilidad.
-                    Ideal para acompañar tus rituales de descanso y bienestar.
+                    <%= product.description %>
                 </p>
 
                 <div class="product-details">

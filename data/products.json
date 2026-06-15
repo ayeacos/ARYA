@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "name": "Vela Vainilla",
+    "description": "Aroma suave y cálido ideal para momentos de relajación.",
+    "image": "vela-vainilla.png",
+    "category": "Aromáticas",
+    "aroma": "Vainilla",
+    "price": "18500"
+  },
+  {
+    "id": 2,
+    "name": "Coco Lima",
+    "description": "Una combinación fresca y tropical que mezcla la dulzura del coco con el toque cítrico de la lima.",
+    "image": "vela-cocolima.png",
+    "category": "Aromáticas",
+    "aroma": "Coco - Lima",
+    "price": 18900
+  },
+  {
+    "id": 3,
+    "name": "Vela Sandía & Pepino",
+    "description": "Fragancia fresca y ligera que combina la dulzura de la sandía con la frescura natural del pepino.",
+    "image": "sandia-pepino.png",
+    "category": "Aromáticas",
+    "aroma": "Sandía - Pepino",
+    "price": 16200
+  },
+  {
+    "id": 4,
+    "name": "Vela Peoina",
+    "description": "Delicado aroma floral con notas suaves y elegantes que aportan armonía y serenidad al ambiente.",
+    "image": "velas-escultoricas.jpeg",
+    "category": "Aromáticas",
+    "aroma": "Peonia",
+    "price": 12000
+  },
+  {
+    "id": 5,
+    "name": "Vela amor",
+    "description": "Una fragancia romántica y envolvente que crea momentos especiales y llena el ambiente de calidez.",
+    "image": "vela-home.png",
+    "category": "Edicion limitada",
+    "aroma": "Jazmín",
+    "price": 19500
+  },
+  {
+    "id": 7,
+    "name": "Vela Alegria ",
+    "description": "Fragancia sofisticada que combina la frescura cítrica con un toque especiado y vibrante. Son ideales para aromatizar espacios sociales, decorar ambientes y crear atmósferas acogedoras y revitalizantes.",
+    "image": "vela-alegria.png",
+    "category": "Aromáticas",
+    "aroma": "Naranja y pimienta",
+    "stock": "18",
+    "price": "16500"
+  },
+  {
+    "id": 8,
+    "name": "Vela amor en calma",
+    "description": "Un blend exclusivo de flores suaves, vainilla blanca y notas cremosas que evocan ternura, elegancia y momentos especiales.",
+    "image": "vela-calma.png",
+    "category": "Edición Limitada",
+    "aroma": "Flores suaves & Vainilla",
+    "stock": "6",
+    "price": "18500"
+  }
+]

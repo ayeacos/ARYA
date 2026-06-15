@@ -15,25 +15,25 @@
 
                 <h2>Editar Producto</h2>
 
-                <form>
+                <form action="/products/<%= product.id %>/edit" method="POST">
 
                     <label for="name">Nombre del producto</label>
-                    <input type="text" id="name" value="Vainilla">
+                    <input type="text" id="name" name="name" value="<%= product.name %>">
 
                     <label for="description">Descripción</label>
-                    <textarea id="description" rows="4"></textarea>
+                    <textarea id="description" name="description" rows="4"><%= product.description %></textarea>
 
                     <label for="image">Imagen</label>
                     <input type="file" id="image">
 
                     <label for="category">Categoría</label>
-                    <input type="text" id="category" value="Velas Aromáticas">
+                    <input type="text" id="category" name="category" value="<%= product.category %>">
 
                     <label for="aroma">Aroma</label>
-                    <input type="text" id="aroma" value="Vainilla">
+                    <input type="text" id="aroma" name="aroma" value="<%= product.aroma %>">
 
                     <label for="price">Precio</label>
-                    <input type="text" id="price" placeholder="$0">
+                    <input type="text" id="price" name="price" value="<%= product.price %>">
 
                     <button type="submit">Guardar cambios</button>
 

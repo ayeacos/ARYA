@@ -13,19 +13,19 @@
             <section class="login">
                 <h2>Crear Producto</h2>
 
-                <form>
+                <form action="/products" method="POST">
 
                     <label for="name">Nombre del producto</label>
-                    <input type="text" id="name" placeholder="Nombre del producto">
+                    <input type="text" id="name" name="name" placeholder="Nombre del producto">
 
                     <label for="description">Descripción</label>
-                    <textarea id="description" rows="4"></textarea>
+                    <textarea id="description" name="description" rows="4"></textarea>
 
                     <label for="image">Imagen</label>
-                    <input type="file" id="image">
+                    <input type="file" id="image" name="image">
 
                     <label for="category">Categoría</label>
-                    <select id="category">
+                    <select id="category" name="category">
                         <option>Aromáticas</option>
                         <option>Escultóricas</option>
                         <option>Gift Box</option>
@@ -33,13 +33,13 @@
                     </select>
 
                     <label for="aroma">Aroma</label>
-                    <input type="text" id="aroma" placeholder="Vainilla, Lavanda, Coco Lima...">
+                    <input type="text" id="aroma" name="aroma" placeholder="Vainilla, Lavanda, Coco Lima...">
 
                     <label for="stock">Stock</label>
-                    <input type="text" id="stock" placeholder="Cantidad disponible">
+                    <input type="text" id="stock" name="stock" placeholder="Cantidad disponible">
 
                     <label for="price">Precio</label>
-                    <input type="text" id="price" placeholder="$0">
+                    <input type="text" id="price" name="price" placeholder="$0">
 
                     <button type="submit">Guardar producto</button>
 
