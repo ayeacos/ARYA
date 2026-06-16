@@ -56,3 +56,41 @@
 ## Aprendizajes
 
 * Estructuración de páginas con HTML.
+
+# Retrospectiva Sprint 5
+
+## Comenzar a hacer
+
+* Implementar validaciones más completas en formularios de registro y login.
+* Organizar las rutas y controladores en archivos separados para mejorar la estructura del proyecto.
+
+## Hacer más
+
+* Probar distintos escenarios de autenticación antes de finalizar cada funcionalidad.
+* Verificar el comportamiento de las rutas protegidas y públicas durante el desarrollo.
+
+## Continuar haciendo
+
+* Utilizar JSON para simular una base de datos durante el aprendizaje.
+* Mantener el código ordenado y comentado cuando sea necesario.
+* Realizar pruebas frecuentes después de cada cambio importante.
+
+## Hacer menos
+
+* Resolver varios errores al mismo tiempo sin aislar la causa principal.
+* Duplicar código cuando puede reutilizarse mediante middlewares.
+
+## Dejar de hacer
+
+* Modificar rutas sin verificar previamente su impacto en otras funcionalidades.
+* Realizar cambios grandes sin probarlos paso a paso.
+
+## Aprendizajes
+
+* Uso de Multer para la carga de imágenes.
+* Encriptación de contraseñas mediante bcrypt.
+* Implementación de sesiones con express-session.
+ 
+
+
+

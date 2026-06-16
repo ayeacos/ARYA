@@ -25,5 +25,23 @@
     "password": "123456",
     "category": "user",
     "image": "user3.jpg"
+  },
+  {
+    "id": 4,
+    "firstName": "Ayelén",
+    "lastName": "Acosta",
+    "email": "ayelen.acca1@gmail.com",
+    "password": "$2b$10$CEHNoa/GrhWPR6PMnLvXGeVASEn8le6uw5gJXLoPUmeRKUjWJmTTW",
+    "category": "user",
+    "image": "default-user.png"
+  },
+  {
+    "id": 5,
+    "firstName": "Carolina",
+    "lastName": "Acosta",
+    "email": "carolina@gmail.com",
+    "password": "$2b$10$yEzXULJyB.6fzf6Y8NAxs.vSHFF1yVb27qfKzHThWHuLks6n9nzTq",
+    "category": "user",
+    "image": "1781564402254-yo.png"
   }
 ]

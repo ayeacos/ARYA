@@ -1,6 +1,21 @@
+const authMiddleware = require('./middlewares/authMiddleware');
+const guestMiddleware = require('./middlewares/guestMiddleware');
+const multer = require('multer');
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const bcrypt = require('bcryptjs');
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './public/images/users');
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + '-' + file.originalname);
+    }
+});
+
+const upload = multer({ storage });
 
 const app = express();
 
@@ -15,16 +30,80 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.urlencoded({ extended: false }));
 
+const session = require('express-session');
+
+app.use(session({
+    secret: 'arya-secret',
+    resave: false,
+    saveUninitialized: false
+}));
+
 app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.get('/login', (req, res) => {
+app.get('/login', guestMiddleware, (req, res) => {
     res.render('users/login');
 });
 
-app.get('/register', (req, res) => {
+app.post('/login', (req, res) => {
+
+    let users = JSON.parse(
+        fs.readFileSync('./data/users.json', 'utf-8')
+    );
+
+    let userToLogin = users.find(
+        user => user.email == req.body.email
+    );
+
+    if (!userToLogin) {
+        return res.redirect('/login');
+    }
+
+    let passwordOk = bcrypt.compareSync(
+        req.body.password,
+        userToLogin.password
+    );
+
+    if (!passwordOk) {
+        return res.redirect('/login');
+    }
+
+    req.session.userLogged = userToLogin;
+
+    res.redirect('/');
+
+});
+
+app.get('/register', guestMiddleware, (req, res) => {
     res.render('users/register');
+});
+
+app.post('/register', upload.single('image'), (req, res) => {
+
+    let users = JSON.parse(
+        fs.readFileSync('./data/users.json', 'utf-8')
+    );
+
+    let newUser = {
+        id: users.length + 1,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: bcrypt.hashSync(req.body.password, 10),
+        category: "user",
+        image: req.file ? req.file.filename : "default-user.png"
+    };
+
+    users.push(newUser);
+
+    fs.writeFileSync(
+        './data/users.json',
+        JSON.stringify(users, null, 2)
+    );
+
+    res.redirect('/login');
+
 });
 
 app.get('/products/:id', (req, res) => {
@@ -45,7 +124,7 @@ app.get('/productCart', (req, res) => {
     res.render('products/productCart');
 });
 
-app.get('/productCreate', (req, res) => {
+app.get('/productCreate', authMiddleware, (req, res) => {
     res.render('products/productCreate');
 });
 
@@ -59,7 +138,7 @@ app.get('/products', (req, res) => {
 
 });
 
-app.post('/products', (req, res) => {
+app.post('/products', authMiddleware, (req, res) => {
 
     let products = JSON.parse(
         fs.readFileSync('./data/products.json', 'utf-8')
@@ -87,7 +166,7 @@ app.post('/products', (req, res) => {
 
 });
 
-app.get('/products/:id/edit', (req, res) => {
+app.get('/products/:id/edit', authMiddleware, (req, res) => {
 
     let products = JSON.parse(
         fs.readFileSync('./data/products.json', 'utf-8')
@@ -101,7 +180,7 @@ app.get('/products/:id/edit', (req, res) => {
 
 });
 
-app.post('/products/:id/edit', (req, res) => {
+app.post('/products/:id/edit', authMiddleware, (req, res) => {
 
     let products = JSON.parse(
         fs.readFileSync('./data/products.json', 'utf-8')
@@ -129,7 +208,7 @@ app.post('/products/:id/edit', (req, res) => {
 
 });
 
-app.post('/products/:id/delete', (req, res) => {
+app.post('/products/:id/delete', authMiddleware, (req, res) => {
 
     let products = JSON.parse(
         fs.readFileSync('./data/products.json', 'utf-8')
@@ -145,6 +224,22 @@ app.post('/products/:id/delete', (req, res) => {
     );
 
     res.redirect('/products');
+
+});
+
+app.get('/profile',  authMiddleware, (req, res) => {
+
+    res.render('users/profile', {
+        user: req.session.userLogged
+    });
+
+});
+
+app.get('/logout', (req, res) => {
+
+    req.session.destroy();
+
+    res.redirect('/');
 
 });
 
