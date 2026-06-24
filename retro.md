@@ -91,6 +91,39 @@
 * Encriptación de contraseñas mediante bcrypt.
 * Implementación de sesiones con express-session.
  
+ # Retrospectiva Sprint 6
+
+## Comenzar a hacer
+
+*Planificar previamente la estructura de la base de datos antes de comenzar a programar.
+*Mantener la organización del proyecto separando rutas, controladores y modelos desde el inicio.
+
+## Hacer más
+
+*Probar las relaciones entre modelos y las consultas con Sequelize de forma incremental.
+*Verificar cada funcionalidad del CRUD después de conectarla con la base de datos.
+
+## Continuar haciendo
+
+*Realizar pruebas frecuentes después de cada cambio importante.
+*Mantener el código organizado y modularizado.
+*Utilizar middlewares para reutilizar lógica y proteger rutas.
+
+## Hacer menos
+
+*Realizar cambios grandes sin comprobar cada paso.
+*Modificar varias partes del proyecto al mismo tiempo cuando aparece un error.
+
+## Dejar de hacer
+
+*Depender exclusivamente de archivos JSON para almacenar información.
+*Trabajar sin verificar previamente las relaciones entre tablas y modelos.
+
+## Aprendizajes
+
+*Organización del proyecto en controllers, routes, middlewares y database.
+*Integración de Sequelize con Express.
+
 
 
 

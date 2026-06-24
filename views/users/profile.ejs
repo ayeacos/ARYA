@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <%- include('../partials/head') %>
-</head>
+<%- include('../partials/head') %>
 
-<body>
+    <body>
 
-    <%- include('../partials/header') %>
+        <%- include('../partials/header') %>
 
-        <main>
+            <main>
 
-            <section class="login">
+                <section class="login">
 
-                <h2>Mi Perfil</h2>
+                    <h2>Mi Perfil</h2>
 
-                <p>Nombre: <%= user.firstName %>
-                </p>
+                    <p>Nombre: <%= user.first_name %>
+                    </p>
 
-                <p>Apellido: <%= user.lastName %>
-                </p>
+                    <p>Apellido: <%= user.last_name %>
+                    </p>
 
-                <p>Email: <%= user.email %>
-                </p>
+                    <p>Email: <%= user.email %>
+                    </p>
 
-                <a href="/logout">
-                    <button>Cerrar sesión</button>
-                </a>
+                    <a href="/profile/edit">
+                        <button>Editar perfil</button>
+                    </a>
 
-                <p>Categoría: <%= user.category %>
-                </p>
+                    <a href="/logout">
+                        <button>Cerrar sesión</button>
+                    </a>
 
-                <img src="/images/users/<%= user.image %>" alt="Perfil" width="200">
+                    <p>Categoría: <%= user.category %>
+                    </p>
 
-            </section>
+                    <img src="/images/users/<%= user.image %>" alt="Perfil" width="200">
 
-        </main>
+                </section>
 
-        <%- include('../partials/footer') %>
+            </main>
 
-</body>
+            <%- include('../partials/footer') %>
+
+    </body>
 
 </html>

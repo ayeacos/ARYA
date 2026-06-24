@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <%- include('../partials/head') %>
-</head>
+<%- include('../partials/head') %>
 
-<body>
+    <body>
 
-    <%- include('../partials/header') %>
+        <%- include('../partials/header') %>
 
-        <main>
-            <section class="login">
-                <h2>Crear Producto</h2>
+            <main>
+                <section class="login">
+                    <h2>Crear Producto</h2>
 
-                <form action="/products" method="POST">
+                    <form action="/products" method="POST" enctype="multipart/form-data">
 
-                    <label for="name">Nombre del producto</label>
-                    <input type="text" id="name" name="name" placeholder="Nombre del producto">
+                        <label for="name">Nombre del producto</label>
+                        <input type="text" id="name" name="name" placeholder="Nombre del producto">
 
-                    <label for="description">Descripción</label>
-                    <textarea id="description" name="description" rows="4"></textarea>
+                        <label for="description">Descripción</label>
+                        <textarea id="description" name="description" rows="4"></textarea>
 
-                    <label for="image">Imagen</label>
-                    <input type="file" id="image" name="image">
+                        <label for="image">Imagen</label>
+                        <input type="file" id="image" name="image">
 
-                    <label for="category">Categoría</label>
-                    <select id="category" name="category">
-                        <option>Aromáticas</option>
-                        <option>Escultóricas</option>
-                        <option>Gift Box</option>
-                        <option>Edición Limitada</option>
-                    </select>
+                        <label for="category_id">Categoría</label>
 
-                    <label for="aroma">Aroma</label>
-                    <input type="text" id="aroma" name="aroma" placeholder="Vainilla, Lavanda, Coco Lima...">
+                        <select id="category_id" name="category_id">
+                            <option value="1">Aromáticas</option>
+                            <option value="2">Escultóricas</option>
+                            <option value="3">Gift Box</option>
+                            <option value="4">Edición Limitada</option>
+                        </select>
 
-                    <label for="stock">Stock</label>
-                    <input type="text" id="stock" name="stock" placeholder="Cantidad disponible">
+                        <label for="aroma">Aroma</label>
+                        <input type="text" id="aroma" name="aroma" placeholder="Vainilla, Lavanda, Coco Lima...">
 
-                    <label for="price">Precio</label>
-                    <input type="text" id="price" name="price" placeholder="$0">
+                        <label for="stock">Stock</label>
+                        <input type="text" id="stock" name="stock" placeholder="Cantidad disponible">
 
-                    <button type="submit">Guardar producto</button>
+                        <label for="price">Precio</label>
+                        <input type="text" id="price" name="price" placeholder="$0">
 
-                </form>
-            </section>
-        </main>
+                        <button type="submit">Guardar producto</button>
 
-        <%- include('../partials/footer') %>
+                    </form>
+                </section>
+            </main>
 
-</body>
+            <%- include('../partials/footer') %>
+
+    </body>
+
 </html>

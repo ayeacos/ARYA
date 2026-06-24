@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head') %>
+
+<body>
+
+<%- include('../partials/header') %>
+
+<main>
+
+<section class="login">
+
+<h2>Editar Perfil</h2>
+
+<form action="/profile/edit" method="POST">
+
+<label>Nombre</label>
+<input type="text" name="firstName"
+value="<%= user.first_name %>">
+
+<label>Apellido</label>
+<input type="text" name="lastName"
+value="<%= user.last_name %>">
+
+<label>Email</label>
+<input type="email" name="email"
+value="<%= user.email %>">
+
+<button type="submit">
+Guardar cambios
+</button>
+
+</form>
+
+</section>
+
+</main>
+
+<%- include('../partials/footer') %>
+
+</body>
+</html>

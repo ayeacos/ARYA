@@ -1,30 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>ARYA</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
+<%- include('../partials/head') %>
 
 <body>
-    <header>
-        <h1 class="logo">ARYA</h1>
 
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="#">Colecciones</a>
-            <a href="login.html">Ingresar</a>
-            <a href="register.html">Crear cuenta</a>
-            <a href="productCart.html">Carrito</a>
-        </nav>
-    </header>
+<%- include('../partials/header') %>
 
     <main>
 
@@ -36,7 +17,7 @@
 
             <div class="product-info">
 
-                <p class="product-category"><%= product.category %></p>
+                <p class="product-category">Velas ARYA</p>
 
                 <h2><%= product.name %></h2>
 
@@ -64,66 +45,8 @@
 
     </main>
 
-    <footer class="footer">
-
-        <div class="footer-container">
-
-            <div class="footer-column">
-                <h3>ARYA</h3>
-                <p>Velas artesanales elaboradas con cera de soja natural para crear
-                    momentos de bienestar, calma y conexión.
-                </p>
-
-                <div class="social-links">
-                    <a href="#">Instagram</a>
-                    <a href="#">Pinterest</a>
-                    <a href="#">Facebook</a>
-                </div>
-            </div>
-
-            <div class="footer-column">
-                <h3>Colecciones</h3>
-                <a href="#">Aromáticas</a>
-                <a href="#">Escultóricas</a>
-                <a href="#">Gift Box</a>
-                <a href="#">Edición Limitada</a>
-            </div>
-
-            <div class="footer-column">
-                <h3>Nuestra historia</h3>
-                <a href="#">Sobre ARYA</a>
-                <a href="#">Blog</a>
-                <a href="#">Contacto</a>
-            </div>
-
-            <div class="footer-column">
-                <h3>Ayuda</h3>
-                <a href="#">Preguntas frecuentes</a>
-                <a href="#">Envíos</a>
-                <a href="#">Devoluciones</a>
-            </div>
-
-            <div class="footer-column footer-newsletter">
-
-                <h3>Newsletter</h3>
-                <p>
-                    Suscribite para recibir novedades, lanzamientos y promociones exclusivas.
-                </p>
-                <input type="email" placeholder="Tu email">
-                <button>Suscribirme</button>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>© 2026 ARYA. Todos los derechos reservados.</p>
-
-            <div>
-                <a href="#">Privacidad</a>
-                <a href="#">Términos</a>
-                <a href="#">Cookies</a>
-            </div>
-        </div>
-
-    </footer>
+<%- include('../partials/footer') %>
 
 </body>
+
+</html>

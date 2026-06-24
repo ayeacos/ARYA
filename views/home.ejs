@@ -1,159 +1,172 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-     <%- include('partials/head') %>
-</head>
+<%- include('partials/head') %>
 
-<body>
+    <body>
+
         <%- include('partials/header') %>
 
-    <main>
-        <section class="hero">
+            <main>
+                <section class="hero">
 
-            <div class="hero-text">
-                
-                <h2>Transformá los pequeños<br>
-                    momentos cotidianos en<br>
-                    experiencias especiales.</h2>
+                    <div class="hero-text">
 
-                <p>
-                    Velas artesanales pensadas para acompañar momentos de bienestar,
-                    calma y conexión con el hogar.
-                </p>
+                        <h2>Transformá los pequeños<br>
+                            momentos cotidianos en<br>
+                            experiencias especiales.</h2>
 
-                <button>Descubrir Colección</button>
-            </div>
+                        <p>
+                            Velas artesanales pensadas para acompañar momentos de bienestar,
+                            calma y conexión con el hogar.
+                        </p>
 
-            <div class="hero-image">
-                <img src="/img/vela-home.png" alt="Vela artesanal ARYA">
-            </div>
-        </section>
+                        <button>Descubrir Colección</button>
+                    </div>
 
-        <section class="categorias">
+                    <div class="hero-image">
+                        <img src="/img/vela-home.png" alt="Vela artesanal ARYA">
+                    </div>
+                </section>
 
-            <h2>Categorías</h2>
+                <section class="categorias">
 
-            <div class="categorias-grid">
+                    <h2>Categorías</h2>
 
-                <article class="categoria-card">
-                    <img src="/img/vela-cocolima.png" class="img-aromatica" alt="Velas aromáticas">
-                    <h3>Aromáticas</h3>
-                </article>
+                    <div class="categorias-grid">
 
-                <article class="categoria-card">
-                    <img src="/img/velas-escultoricas.jpeg" class="img-escultorica" alt="Velas escultóricas">
-                    <h3>Velas Escultóricas</h3>
-                </article>
+                        <article class="categoria-card">
+                            <img src="/img/vela-cocolima.png" class="img-aromatica" alt="Velas aromáticas">
+                            <h3>Aromáticas</h3>
+                        </article>
 
-                <article class="categoria-card">
-                    <img src="/img/giftbox.jpg" alt="Gift Box">
-                    <h3>Gift Box</h3>
-                </article>
+                        <article class="categoria-card">
+                            <img src="/img/velas-escultoricas.jpeg" class="img-escultorica" alt="Velas escultóricas">
+                            <h3>Velas Escultóricas</h3>
+                        </article>
 
-                <article class="categoria-card">
-                    <img src="/img/edicion-limitada.png" class="img-edicion-limitada" alt="Edición Limitada">
-                    <h3>Edición Limitada</h3>
-                </article>
+                        <article class="categoria-card">
+                            <img src="/img/giftbox.jpg" alt="Gift Box">
+                            <h3>Gift Box</h3>
+                        </article>
 
-            </div>
+                        <article class="categoria-card">
+                            <img src="/img/edicion-limitada.png" class="img-edicion-limitada" alt="Edición Limitada">
+                            <h3>Edición Limitada</h3>
+                        </article>
 
-        </section>
+                    </div>
 
-        <section class="destacados">
+                </section>
 
-            <h2>Productos Destacados</h2>
+                <section class="destacados">
 
-            <div class="productos-grid">
+                    <h2>Productos Destacados</h2>
 
-                <article class="producto-card">
-                    <img src="/img/vela-vainilla.png" class="img-vainilla" alt="Vainilla">
-                    <h3>Vainilla</h3>
-                    <p>$18.500</p>
-                    <button>Ver producto</button>
-                </article>
+                    <div class="productos-grid">
 
-                <article class="producto-card">
-                    <img src="/img/sandia-pepino.png" alt="Sandía y Pepino">
-                    <h3>Sandía & Pepino</h3>
-                    <p>$19.500</p>
-                    <button>Ver producto</button>
-                </article>
 
-                <article class="producto-card">
-                    <img src="/img/box-deseos.png" alt="Gift Box">
-                    <h3>Gift Box Deseos</h3>
-                    <p>$35.000</p>
-                    <button>Ver producto</button>
-                </article>
 
-                <article class="producto-card">
-                    <img src="/img/gift-box.jpg" alt="Edición Especial">
-                    <h3>Edición Especial</h3>
-                    <p>$22.000</p>
-                    <button>Ver producto</button>
-                </article>
+                        <% products.forEach(product=> { %>
 
-            </div>
+                            <article class="producto-card">
 
-        </section>
+                                <img src="/img/<%= product.image %>" alt="<%= product.name %>">
 
-        <section class="beneficios">
+                                <h3>
+                                    <%= product.name %>
+                                </h3>
 
-            <h2>¿Por qué elegir ARYA?</h2>
+                                <p>$<%= product.price %>
+                                </p>
 
-            <div class="beneficios-grid">
+                                <a href="/products/<%= product.id %>">
+                                    <button>Ver producto</button>
+                                </a>
 
-                <div class="beneficio">
-                    <p>Cera de soja 100% natural</p>
-                </div>
+                            </article>
 
-                <div class="beneficio">
-                    <p>Envases reutilizables</p>
-                </div>
+                            <% }) %>
 
-                <div class="beneficio">
-                    <p>Elaboración artesanal</p>
-                </div>
+                    </div>
 
-                <div class="beneficio">
-                    <p>Aromas intensos y mayor duración</p>
-                </div>
+                    </div>
 
-                <div class="beneficio">
-                    <p>Diseñadas para regalar y disfrutar</p>
-                </div>
+                </section>
 
-            </div>
+                <section class="beneficios">
 
-        </section>
+                    <h2>¿Por qué elegir ARYA?</h2>
 
-        <section class="historia">
+                    <div class="beneficios-grid">
 
-            <div class="historia-img">
-                <img src="/img/vela-historia.png" alt="Historia ARYA">
-            </div>
+                        <div class="beneficio">
+                            <p>Cera de soja 100% natural</p>
+                        </div>
 
-            <div class="historia-text">
-                <h2>Nuestra Historia</h2>
+                        <div class="beneficio">
+                            <p>Envases reutilizables</p>
+                        </div>
 
-                <p>
-                    ARYA nació del deseo de transformar pequeños momentos cotidianos
-                    en experiencias especiales.<br>
-                    Cada vela es elaborada artesanalmente con cera de soja natural,
-                    cuidando cada detalle para crear ambientes cálidos y memorables.
-                </p>
+                        <div class="beneficio">
+                            <p>Elaboración artesanal</p>
+                        </div>
 
-                <button>Conocé más</button>
+                        <div class="beneficio">
+                            <p>Aromas intensos y mayor duración</p>
+                        </div>
 
-            </div>
+                        <div class="beneficio">
+                            <p>Diseñadas para regalar y disfrutar</p>
+                        </div>
 
-        </section>
+                    </div>
 
-    </main>
+                </section>
 
-    <%- include('partials/footer') %>
+                <section class="historia">
 
-</body>
+                    <div class="historia-img">
+                        <img src="/img/vela-historia.png" alt="Historia ARYA">
+                    </div>
+
+                    <div class="historia-text">
+                        <h2>Nuestra Historia</h2>
+
+                        <p>
+                            ARYA nació del deseo de transformar pequeños momentos cotidianos
+                            en experiencias especiales.<br>
+                            Cada vela es elaborada artesanalmente con cera de soja natural,
+                            cuidando cada detalle para crear ambientes cálidos y memorables.
+                        </p>
+
+                        <button>Conocé más</button>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+            <%- include('partials/footer') %>
+
+                <script>
+
+                    const icon = document.getElementById('search-icon');
+                    const form = document.getElementById('search-form');
+
+                    icon.addEventListener('click', () => {
+
+                        if (form.style.display === 'block') {
+                            form.style.display = 'none';
+                        } else {
+                            form.style.display = 'block';
+                        }
+
+                    });
+
+                </script>
+
+    </body>
 
 </html>
