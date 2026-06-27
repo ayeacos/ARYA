@@ -22,3 +22,76 @@ Implementar el sistema de usuarios del proyecto ARYA.
 ## Resultado esperado
 
 Permitir registro, login, logout y acceso restringido según el estado de autenticación del usuario.
+
+# Planning Sprint 7 - Validaciones
+
+## Objetivo
+
+Implementar validaciones de back-end y front-end para asegurar la integridad de los datos enviados por los usuarios y mejorar la experiencia de uso del sitio.
+
+## Tareas
+
+### 1. Planificación
+
+* Revisar la consigna.
+* Definir el orden de implementación.
+* Actualizar tablero de trabajo.
+
+### 2. Validaciones Back-End
+
+#### Registro de usuarios
+
+* Validar nombre (obligatorio, mínimo 2 caracteres).
+* Validar apellido (obligatorio, mínimo 2 caracteres).
+* Validar email (obligatorio y formato válido).
+* Validar email único en la base de datos.
+* Validar contraseña (mínimo 8 caracteres).
+* Validar formato de imagen.
+
+#### Login
+
+* Validar email.
+* Validar existencia del usuario.
+* Validar contraseña.
+
+#### Productos
+
+* Validar nombre (mínimo 5 caracteres).
+* Validar descripción (mínimo 20 caracteres).
+* Validar imagen.
+
+### 3. Mostrar errores en vistas
+
+* Registro.
+* Login.
+* Crear producto.
+* Editar producto.
+
+### 4. Validaciones Front-End
+
+#### Registro
+
+* Nombre.
+* Apellido.
+* Email.
+* Contraseña.
+* Imagen.
+
+#### Login
+
+* Email.
+* Contraseña.
+
+#### Productos
+
+* Crear producto.
+* Editar producto.
+
+### 5. Pruebas
+
+* Verificar mensajes de error.
+* Verificar formularios válidos e inválidos.
+
+### 6. Retrospectiva
+
+* Actualizar Retro.md al finalizar el sprint.

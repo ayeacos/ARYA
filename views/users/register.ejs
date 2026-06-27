@@ -1,43 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <%- include('../partials/head') %>
+<%- include('../partials/head') %>
 
-<body>
+    <body>
 
-    <%- include('../partials/header') %>
+        <%- include('../partials/header') %>
 
-        <main>
+            <main>
 
-            <section class="login">
+                <section class="login">
 
-                <h2>Crear Cuenta</h2>
+                    <h2>Crear Cuenta</h2>
 
-                <form action="/register" method="POST" enctype="multipart/form-data">
+                    <form action="/register" method="POST" enctype="multipart/form-data">
 
-                    <label for="firstName">Nombre</label>
-                    <input type="text" id="firstName" name="firstName">
+                        <label for="firstName">Nombre</label>
+                        <input type="text" id="firstName" name="firstName" value="<%= old ? old.firstName : '' %>">
 
-                    <label for="lastName">Apellido</label>
-                    <input type="text" id="lastName" name="lastName">
+                        <% if (typeof errors !=='undefined' && errors.firstName) { %>
+                            <p style="color:red;">
+                                <%= errors.firstName.msg %>
+                            </p>
+                            <% } %>
 
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email">
 
-                    <label for="password">Contraseña</label>
-                    <input type="password" id="password" name="password">
+                        <label for="lastName">Apellido</label>
+                        <input type="text" id="lastName" name="lastName" value="<%= old ? old.lastName : '' %>">
 
-                    <label for="image">Imagen de perfil</label>
-                    <input type="file" id="image" name="image">
+                        <% if (typeof errors !=='undefined' && errors.lastName) { %>
+                            <p style="color:red;">
+                                <%= errors.lastName.msg %>
+                            </p>
+                            <% } %>
 
-                    <button type="submit">Crear cuenta</button>
 
-                </form>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" value="<%= old ? old.email : '' %>">
 
-            </section>
+                        <% if (typeof errors !=='undefined' && errors.email) { %>
+                            <p style="color:red;">
+                                <%= errors.email.msg %>
+                            </p>
+                            <% } %>
 
-        </main>
 
-        <%- include('../partials/footer') %>
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password">
 
-</body>
+                        <% if (typeof errors !=='undefined' && errors.password) { %>
+                            <p style="color:red;">
+                                <%= errors.password.msg %>
+                            </p>
+                        <% } %>
+
+                        <label for="image">Imagen de perfil</label>
+                        <input type="file" id="image" name="image">
+
+                        <% if (typeof errors !== 'undefined' && errors.image) { %>
+                            <p style="color:red;"><%= errors.image.msg %></p>
+                        <% } %>
+
+                        <button type="submit">Crear cuenta</button>
+
+                    </form>
+
+                </section>
+
+            </main>
+
+            <%- include('../partials/footer') %>
+
+            <script src="/js/registerValidation.js"></script>
+    </body>

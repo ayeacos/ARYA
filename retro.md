@@ -90,8 +90,8 @@
 * Uso de Multer para la carga de imágenes.
 * Encriptación de contraseñas mediante bcrypt.
 * Implementación de sesiones con express-session.
- 
- # Retrospectiva Sprint 6
+
+# Retrospectiva Sprint 6
 
 ## Comenzar a hacer
 
@@ -123,6 +123,41 @@
 
 *Organización del proyecto en controllers, routes, middlewares y database.
 *Integración de Sequelize con Express.
+ 
+ # Retrospectiva Sprint 7
+
+## Comenzar a hacer
+
+*Implementar validaciones tanto en el back-end como en el front-end desde el inicio del desarrollo de cada formulario.
+*Probar cada validación individualmente antes de continuar con la siguiente funcionalidad.
+
+## Hacer más
+
+*Reutilizar lógica de validaciones entre formularios similares para evitar duplicar código.
+*Verificar tanto el funcionamiento del back-end como del front-end antes de finalizar cada tarea.
+
+## Continuar haciendo
+
+*Mantener una estructura ordenada de controladores, rutas y middlewares.
+*Realizar pruebas frecuentes luego de cada cambio importante.
+*Utilizar Git para guardar avances estables del proyecto.
+
+## Hacer menos
+
+*Intentar resolver varios errores al mismo tiempo.
+*gregar funcionalidades opcionales antes de completar los requisitos obligatorios del sprint.
+
+## Dejar de hacer
+
+*Probar únicamente los casos correctos sin verificar escenarios con errores.
+*Modificar varios archivos sin confirmar previamente que cada cambio funciona correctamente.
+
+## Aprendizajes
+
+*Validaciones del lado del cliente mediante JavaScript.
+*Validación de archivos e imágenes antes de procesar la información.
+
+
 
 
 

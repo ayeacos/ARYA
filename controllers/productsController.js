@@ -1,5 +1,6 @@
 const db = require('../database/models');
 const { Op } = require('sequelize');
+const { validationResult } = require('express-validator');
 
 const productsController = {
 
@@ -11,19 +12,19 @@ const productsController = {
 
     },
 
-detail: async (req, res) => {
+    detail: async (req, res) => {
 
-    let product = await db.Product.findByPk(req.params.id);
+        let product = await db.Product.findByPk(req.params.id);
 
-    console.log(product);
+        console.log(product);
 
-    if (!product) {
+        if (!product) {
         return res.send('Producto no encontrado');
     }
 
-    res.render('products/productDetail', { product });
+        res.render('products/productDetail', { product });
 
-},
+    },
 
     search: async (req, res) => {
 
@@ -42,42 +43,72 @@ detail: async (req, res) => {
     },
 
     create: (req, res) => {
-
-        res.render('products/productCreate');
-
+    res.render('products/productCreate', {
+        old: {},
+        errors: {}
+    });
     },
 
-    store: async (req, res) => {
+   store: async (req, res) => {
 
-        await db.Product.create({
+    let errors = validationResult(req);
 
-            name: req.body.name,
-            description: req.body.description,
-            image: req.file ? req.file.filename : 'default-product.png',
-            aroma: req.body.aroma,
-            stock: req.body.stock,
-            price: req.body.price,
-            category_id: req.body.category_id
+    if (!errors.isEmpty()) {
 
+        return res.render('products/productCreate', {
+            errors: errors.mapped(),
+            old: req.body
         });
 
-        res.redirect('/products');
+    }
 
-    },
+    await db.Product.create({
+
+        name: req.body.name,
+        description: req.body.description,
+        image: req.file ? req.file.filename : 'default-product.png',
+        aroma: req.body.aroma,
+        stock: req.body.stock,
+        price: req.body.price,
+        category_id: req.body.category_id
+
+    });
+
+    res.redirect('/products');
+
+},
 
     edit: async (req, res) => {
 
-        let product = await db.Product.findByPk(req.params.id);
+    let product = await db.Product.findByPk(req.params.id);
 
-        if (!product) {
+    if (!product) {
         return res.send('Producto no encontrado');
     }
 
-        res.render('products/productEdit', { product });
+    res.render('products/productEdit', {
+        product,
+        old: {},
+        errors: {}
+    });
 
-    },
+},
 
     update: async (req, res) => {
+
+    let errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+
+        let product = await db.Product.findByPk(req.params.id);
+
+        return res.render('products/productEdit', {
+            product,
+            errors: errors.mapped(),
+            old: req.body
+        });
+
+    }
 
     let data = {
 
@@ -89,7 +120,7 @@ detail: async (req, res) => {
 
     };
 
-    if(req.file){
+    if (req.file) {
         data.image = req.file.filename;
     }
 
@@ -99,7 +130,7 @@ detail: async (req, res) => {
         }
     });
 
-    res.redirect('/products/' + req.params.id);
+    res.redirect('/products');
 
 },
 

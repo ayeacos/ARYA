@@ -14,31 +14,48 @@
                     <form action="/products" method="POST" enctype="multipart/form-data">
 
                         <label for="name">Nombre del producto</label>
-                        <input type="text" id="name" name="name" placeholder="Nombre del producto">
+                        <input type="text" id="name" name="name" placeholder="Nombre del producto" value="<%= old ? old.name : '' %>">
+
+                        <% if (typeof errors !=='undefined' && errors.name) { %>
+                            <p style="color:red;">
+                                <%= errors.name.msg %>
+                            </p>
+                            <% } %>
 
                         <label for="description">Descripción</label>
-                        <textarea id="description" name="description" rows="4"></textarea>
+                        <textarea id="description" name="description" rows="4"><%= old ? old.description : '' %></textarea>
+
+                        <% if (typeof errors !=='undefined' && errors.description) { %>
+                            <p style="color:red;">
+                                <%= errors.description.msg %>
+                            </p>    
+                            <% } %>
 
                         <label for="image">Imagen</label>
                         <input type="file" id="image" name="image">
+                        <% if (typeof errors !=='undefined' && errors.image) { %>
+                            <p style="color:red;">
+                                <%= errors.image.msg %>
+                            </p>
+                            <% } %>
 
                         <label for="category_id">Categoría</label>
 
-                        <select id="category_id" name="category_id">
-                            <option value="1">Aromáticas</option>
-                            <option value="2">Escultóricas</option>
-                            <option value="3">Gift Box</option>
-                            <option value="4">Edición Limitada</option>
-                        </select>
+                            <select id="category_id" name="category_id">
+                                <option value="1">Aromáticas</option>
+                                <option value="2">Escultóricas</option>
+                                <option value="3">Gift Box</option>
+                                <option value="4">Edición Limitada</option>
+                            </select>
 
-                        <label for="aroma">Aroma</label>
-                        <input type="text" id="aroma" name="aroma" placeholder="Vainilla, Lavanda, Coco Lima...">
+                         <label for="aroma">Aroma</label>
+                         <input type="text" id="aroma" name="aroma" placeholder="Vainilla, Lavanda, Coco Lima..." value="<%= old ? old.aroma : '' %>">
 
                         <label for="stock">Stock</label>
-                        <input type="text" id="stock" name="stock" placeholder="Cantidad disponible">
+                        <input type="text" id="stock" name="stock" placeholder="Cantidad disponible" value="<%= old ? old.stock : '' %>">
 
                         <label for="price">Precio</label>
-                        <input type="text" id="price" name="price" placeholder="$0">
+                        <input type="text" id="price" name="price" placeholder="$0" value="<%= old ? old.price : '' %>">
 
                         <button type="submit">Guardar producto</button>
 
@@ -47,6 +64,8 @@
             </main>
 
             <%- include('../partials/footer') %>
+
+            <script src="/js/productValidation.js"></script>
 
     </body>
 

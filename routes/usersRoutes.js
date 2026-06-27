@@ -1,3 +1,5 @@
+const registerValidator = require('../middlewares/validations/registerValidator');
+const loginValidator = require('../middlewares/validations/loginValidator');
 const express = require('express');
 const router = express.Router();
 
@@ -25,6 +27,7 @@ router.get('/login',
 );
 
 router.post('/login',
+    loginValidator,
     usersController.processLogin
 );
 
@@ -35,6 +38,7 @@ router.get('/register',
 
 router.post('/register',
     upload.single('image'),
+    registerValidator,
     usersController.processRegister
 );
 
