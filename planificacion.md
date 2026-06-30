@@ -95,3 +95,21 @@ Implementar validaciones de back-end y front-end para asegurar la integridad de 
 ### 6. Retrospectiva
 
 * Actualizar Retro.md al finalizar el sprint.
+
+# Sprint 8 - Planificación
+
+## Objetivo
+
+Implementar la API REST del proyecto y desarrollar un Dashboard en React que consuma dicha API.
+
+## Orden de trabajo
+
+1. Actualizar tablero de trabajo.
+2. Crear API de usuarios.
+3. Crear API de productos.
+4. Probar todos los endpoints.
+5. Crear proyecto Dashboard en React.
+6. Consumir la API desde React.
+7. Mostrar métricas del sistema.
+8. Realizar pruebas finales.
+9. Subir cambios al repositorio.
